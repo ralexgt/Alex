@@ -1,3 +1,0 @@
-npm init -y // init package jason
-npm i express
-npm i --save-dev nodemon
