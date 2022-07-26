@@ -132,3 +132,79 @@ const d = new Dog();
 d.move();
 // Derived class method
 d.woof(3);
+class Base {
+    greet() {
+        console.log("Hello, world!");
+    }
+}
+class Derived extends Base {
+    greet(name) {
+        if (name === undefined) {
+            super.greet();
+        }
+        else {
+            console.log(`Hello, ${name.toUpperCase()}`);
+        }
+    }
+}
+const derivedClass = new Derived();
+derivedClass.greet();
+derivedClass.greet("reader");
+class BaseTest {
+    constructor() {
+        this.x = 5;
+    }
+    showX() {
+        console.log(this.x);
+    }
+}
+const b = new BaseTest();
+//console.log(b.x);           Can't access from outside the class
+b.showX();
+class DerivedTest extends BaseTest {
+}
+class A1 {
+    constructor() {
+        this.x = 10;
+    }
+    sameAs(other) {
+        return other.x === this.x;
+    }
+}
+class MySafe {
+    constructor() {
+        this.secretKey = 12345;
+    }
+}
+const s = new MySafe();
+// Not allowed during type checking
+//console.log(s.secretKey);           Property 'secretKey' is private and only accessible within class 'MySafe'.
+// OK
+console.log(s["secretKey"]);
+class MyClass {
+    static printX() {
+        console.log(MyClass.x);
+    }
+}
+MyClass.x = 0;
+console.log(MyClass.x);
+MyClass.printX();
+class MyClass2 {
+}
+MyClass2.x = 0;
+//console.log(MyClass2.x);          Property 'x' is private and only accessible within class 'MyClass2'
+class MyClass3 {
+    constructor() {
+        this.name = "MyClass";
+    }
+    getName() {
+        return this.name;
+    }
+}
+const cc = new MyClass3();
+const obj = {
+    name: "obj",
+    getName: cc.getName,
+};
+// Prints "obj", not "MyClass"
+console.log(obj.getName());
