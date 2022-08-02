@@ -34,15 +34,19 @@ app.use(bodyParser.json());
 app.post("/", function (req, res) {
     maxmind.open('GeoLite2-City_20220802/GeoLite2-City.mmdb').then((lookup) => {
         let myip = req.body.ip
-        if(maxmind.validate(myip)){
+        if(maxmind.validate(myip) && lookup.get(myip) != null){
             location.ip = myip
             location.continent = lookup.get(myip).continent.names.en
             location.country = lookup.get(myip).country.names.en
             res.send(location) 
         }
-        else {
+        
+        else if (maxmind.validate(myip) === false) {
             res.send(`invalid IP`)
             //res.send(`IP: ${myip} \n Continent: ${lookup.get(myip).continent.names.en} \n Country: ${lookup.get(myip).country.names.en}`)
+        }
+        else {
+            res.send(`unknown`)
         }
     });    
 })
