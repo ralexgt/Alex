@@ -21,12 +21,12 @@ app.use(bodyParser.json());
             location.ip = myip
             location.continent = lookup.get(myip).continent.names.en
             location.country = lookup.get(myip).country.names.en
-            res.send(location) 
+            res.send(location)  
+            //res.send(`IP: ${myip} \n Continent: ${lookup.get(myip).continent.names.en} \n Country: ${lookup.get(myip).country.names.en}`)
         }
         else {
             res.send(`invalid IP`)
         }
-        //res.send(`IP: ${myip} \n Continent: ${lookup.get(myip).continent.names.en} \n Country: ${lookup.get(myip).country.names.en}`)
     });    
 })*/
 
@@ -42,8 +42,8 @@ app.post("/", function (req, res) {
         }
         else {
             res.send(`invalid IP`)
+            //res.send(`IP: ${myip} \n Continent: ${lookup.get(myip).continent.names.en} \n Country: ${lookup.get(myip).country.names.en}`)
         }
-        //res.send(`IP: ${myip} \n Continent: ${lookup.get(myip).continent.names.en} \n Country: ${lookup.get(myip).country.names.en}`)
     });    
 })
 
