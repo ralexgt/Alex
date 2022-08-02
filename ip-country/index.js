@@ -1,8 +1,9 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const maxmind = require('maxmind');
+
 const app = express()
 const PORT = 5000
-
 
 let location = {
     ip: "ip",
@@ -11,7 +12,8 @@ let location = {
 }
 
 app.use(bodyParser.json());
-const maxmind = require('maxmind');
+
+// ip parametru din path
 /*app.post("/:ip", function (req, res) {
     maxmind.open('GeoLite2-City_20220802/GeoLite2-City.mmdb').then((lookup) => {
         let myip = req.params.ip
@@ -27,6 +29,8 @@ const maxmind = require('maxmind');
         //res.send(`IP: ${myip} \n Continent: ${lookup.get(myip).continent.names.en} \n Country: ${lookup.get(myip).country.names.en}`)
     });    
 })*/
+
+// ip parametru din body
 app.post("/", function (req, res) {
     maxmind.open('GeoLite2-City_20220802/GeoLite2-City.mmdb').then((lookup) => {
         let myip = req.body.ip
