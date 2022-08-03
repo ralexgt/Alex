@@ -12,23 +12,28 @@ async function main(){
     const app = express();
     
     app.use(bodyParser.json());
-    
-    app.post("/api/location", function (req: { body: {
-                                               ip: string;
-                                              } },
-                                        res: { status: (arg0: number) => {
-                                                    (): any;
-                                                    new(): any;
-                                                    json: {
-                                                        (arg0: { error: string; }): void;
-                                                        new(): any;
-                                                    };   
-                                                };
-                                                json: (arg0: {ip: string;
-                                                            continent: string;
-                                                            country: string;
-                                                        }) => void;
-                                             })  {
+
+    type Request =
+    {   body: 
+        {
+            ip: string;
+        }
+    };
+    type Response = { status: (arg0: number) => {
+        (): any;
+        new(): any;
+        json: {
+            (arg0: { error: string; }): void;
+            new(): any;
+        };   
+        };
+        json: (arg0: {ip: string;
+                continent: string;
+                country: string;
+            }) => void;
+        };
+
+    app.post("/api/location", function (req: Request, res: Response) {
         const clientIp = req.body.ip
 
         if(!maxmind.validate(clientIp)){
