@@ -32,7 +32,7 @@ async function main(){
             continent: location.continent.names.en,
             country: location.country.names.en
         });
-    });    
+    });     
 
 app.listen(PORT, () => 
     console.log(`Server running on port http://localhost:${PORT}`));
