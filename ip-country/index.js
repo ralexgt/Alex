@@ -32,7 +32,7 @@ async function main() {
       return;
     }
 
-    res.json({
+    res.json({ 
       ip: clientIp,
       continent: location.continent.names.en,
       country: location.country.names.en,
