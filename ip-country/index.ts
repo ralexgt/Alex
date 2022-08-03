@@ -13,7 +13,22 @@ async function main(){
     
     app.use(bodyParser.json());
     
-    app.post("/api/location", function (req: { body: { ip: string; }; }, res: { status: (arg0: number) => { (): any; new(): any; json: { (arg0: { error: string; }): void; new(): any; }; }; json: (arg0: { ip: any; continent: any; country: any; }) => void; }) {
+    app.post("/api/location", function (req: { body: {
+                                               ip: string;
+                                              } },
+                                        res: { status: (arg0: number) => {
+                                                    (): any;
+                                                    new(): any;
+                                                    json: {
+                                                        (arg0: { error: string; }): void;
+                                                        new(): any;
+                                                    };   
+                                                };
+                                                json: (arg0: {ip: string;
+                                                            continent: string;
+                                                            country: string;
+                                                        }) => void;
+                                             })  {
         const clientIp = req.body.ip
 
         if(!maxmind.validate(clientIp)){
