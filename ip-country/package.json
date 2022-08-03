@@ -11,7 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.1",
+    "geotools": "^0.1.0",
     "maxmind": "^4.3.6",
+    "randomness": "^1.5.17",
     "request-ip": "^3.3.0"
   },
   "devDependencies": {
