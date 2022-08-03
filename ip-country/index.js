@@ -13,7 +13,7 @@ const DB_PATH = "GeoLite2-City_20220802/GeoLite2-City.mmdb";
 
 async function main() {
   const lookup = await maxmind.open(DB_PATH);
-
+ 
   const app = express();
 
   app.use(bodyParser.json());
