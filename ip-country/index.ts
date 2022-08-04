@@ -20,11 +20,8 @@ async function main(){
         }
     };
     type Response = { status: (arg0: number) => {
-        (): any;
-        new(): any;
         json: {
             (arg0: { error: string; }): void;
-            new(): any;
         };   
         };
         json: (arg0: {ip: string;
@@ -34,7 +31,7 @@ async function main(){
         };
 
     app.post("/api/location", function (req: Request, res: Response) {
-        const clientIp = req.body.ip
+        const clientIp = req.body.ip;
 
         if(!maxmind.validate(clientIp)){
             res.status(400).json({ error: "Invalid IP" });
@@ -44,11 +41,11 @@ async function main(){
         interface Location {
             continent: {
                 names: 
-                    {en: string }
+                    {en: string };
                 },
             country: {
                 names: 
-                    {en: string }
+                    {en: string };
                 }
             };
             
