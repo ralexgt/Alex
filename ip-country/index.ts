@@ -1,12 +1,9 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const maxmind = require("maxmind");
-const fs = require('fs');
+import express from "express";
+import bodyParser from "body-parser";
+import maxmind from "maxmind";
 
 const PORT = 5000;
 const DB_PATH = "GeoLite2-City_20220802/GeoLite2-City.mmdb";
-
-
 
 async function main(){  
     const lookup = await maxmind.open(DB_PATH);
@@ -14,24 +11,8 @@ async function main(){
     
     app.use(bodyParser.json());
 
-    type Request =
-    {   body: 
-        {
-            ip: string;
-        }
-    };
-    type Response = { status: (arg0: number) => {
-        json: {
-            (arg0: { error: string; }): void;
-        };   
-        };
-        json: (arg0: {ip: string;
-                continent: string;
-                country: string;
-            }) => void;
-        };
 
-    app.post("/api/location", function (req: Request, res: Response) {
+    app.post("/api/location", function (req, res) {
         const clientIp = req.body.ip;
 
         if(!maxmind.validate(clientIp)){
@@ -50,7 +31,7 @@ async function main(){
                 }
             };
             
-        const location: Location = lookup.get(clientIp);
+        const location = lookup.get(clientIp) as Location;
         if(!location) {
             res.status(400).json({ error: "Unknown location" });
             return;
