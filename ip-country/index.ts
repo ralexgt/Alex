@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import maxmind from "maxmind";
 
 const PORT = 5000;
-const DB_PATH = "GeoLite2-City_20220802/GeoLite2-City.mmdb";
+const DB_PATH = "GeoLite2-City_20220805/GeoLite2-City.mmdb";
 
 async function main(){  
     const lookup = await maxmind.open(DB_PATH);
