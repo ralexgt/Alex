@@ -10,7 +10,7 @@ export function createFile () {
     console.log("File was created successfully. " +  new Date());
     })
     resolve();
-});
+})
 }
 
 export async function allowsFetch(url: string)
@@ -36,13 +36,13 @@ export async function downloadArchive  (url: string, path: string) {
         })
     resolve();
     })
-};
+}
 
 export async function decompressArchive (file: string, destination: string){
     return new Promise<void>( async (resolve, reject) => {
     decompress(file, destination).then(files => {
         console.log(`files extracted to ${destination} `+ new Date());
-    });
+    })
     resolve();
 })
 }
