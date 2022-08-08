@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const maxmind = require("maxmind");
+const fs = require('fs');
 
 const PORT = 5000;
 const DB_PATH = "GeoLite2-City_20220802/GeoLite2-City.mmdb";
