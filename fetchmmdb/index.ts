@@ -10,8 +10,8 @@ async function main()
 {
     const downloadUrl = "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key=pbBnHIrYZX9EL2ka&suffix=tar.gz";
     const filePath = "./fetchedDB.tar.gz";
-    const destination = "C:/Users/roman/Desktop/internship_repo/ip-country" 
-
+    const destination = "./"; 
+    
     if(!fs.existsSync(filePath) || fs.statSync(filePath).size == 0) {
         await createFile(filePath);
         await allowsFetch(downloadUrl);
@@ -21,7 +21,7 @@ async function main()
             console.log("File path already exists");
         }
 
-    decompress(filePath, destination).then(files => {
+    await decompress(filePath, destination).then(() => {
         console.log(`files extracted to ${destination} `);
 })
 }
