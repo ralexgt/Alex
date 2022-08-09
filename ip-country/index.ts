@@ -13,7 +13,7 @@ async function main(){
 
 
     app.post("/api/location", function (req, res) {
-        const clientIp = req.body.ip;
+        const clientIp: string = req.body.ip;
 
         if(!maxmind.validate(clientIp)){
             res.status(400).json({ error: "Invalid IP" });
