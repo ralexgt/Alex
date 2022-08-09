@@ -19,7 +19,7 @@ async function main(){
             res.status(400).json({ error: "Invalid IP" });
             return;
         }
-        
+         
         interface Location {
             continent: {
                 names: 
@@ -30,7 +30,7 @@ async function main(){
                     {en: string };
                 }
             };
-            
+
         const location = lookup.get(clientIp) as Location;
         if(!location) {
             res.status(400).json({ error: "Unknown location" });
