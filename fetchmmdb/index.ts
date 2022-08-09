@@ -1,7 +1,5 @@
-import {allowsFetch} from "./functions";
-import {downloadArchive} from "./functions";
-import {createFile} from "./functions";
 import decompress from "decompress";
+import { allowsFetch, createFile, downloadArchive } from "./functions";
 
 import fs from "fs";
 
@@ -27,7 +25,7 @@ async function main()
             else
             console.log(`files extracted to ${destination} `);
         
-})
+    })
 }
 
 main()
