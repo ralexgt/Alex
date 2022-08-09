@@ -5,11 +5,12 @@ import decompress from "decompress";
 
 import fs from "fs";
 
+
 async function main()
 {
     const downloadUrl = "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key=pbBnHIrYZX9EL2ka&suffix=tar.gz";
     const filePath = "./fetchedDB.tar.gz";
-    const destination = "./"; 
+    let destination = "./"; 
 
     if(!fs.existsSync(filePath) || fs.statSync(filePath).size == 0) {
         await createFile(filePath);
@@ -21,7 +22,11 @@ async function main()
         }
 
     await decompress(filePath, destination).then(() => {
-        console.log(`files extracted to ${destination} `);
+        if(destination === "./")
+            console.log("files extracted here");
+            else
+            console.log(`files extracted to ${destination} `);
+        
 })
 }
 
