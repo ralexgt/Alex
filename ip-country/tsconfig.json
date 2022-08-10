@@ -11,7 +11,8 @@
     "noFallthroughCasesInSwitch": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-    "declaration": true
+    "declaration": true,
+
   },
   "files": ["src/index.ts", "src/resolver.ts"]
 }
