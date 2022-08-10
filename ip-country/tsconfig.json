@@ -1,19 +1,17 @@
 {
   "compilerOptions": {
-    "target": "ES2022",                                
-    "module": "commonjs",                         
-    "esModuleInterop": true,                             
-    "forceConsistentCasingInFileNames": true,            
-    "strict": true,                                  
+    "target": "ES2022",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
     "noImplicitAny": true,
     "allowUnreachableCode": false,
     "alwaysStrict": true,
     "noFallthroughCasesInSwitch": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-    "declaration": true,
+    "declaration": true
   },
-  "files": [
-    "index.ts"
-  ]
+  "files": ["src/index.ts", "src/resolver.ts"]
 }
