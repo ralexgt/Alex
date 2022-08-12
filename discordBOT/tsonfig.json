@@ -23,11 +23,9 @@
   "files": [
       "src/Bot.ts"
   ],
-  "include": [
-      "./**/*.ts"
-  ],
+  "include": 
+      ["./src", "./scripts"],
   "exclude": [
-      "node_modules",
-      "dist"
+      "node_modules"
   ]
 }
