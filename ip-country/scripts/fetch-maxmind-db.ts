@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import fetch from "isomorphic-fetch";
-import {exec, mv } from "shelljs";
+import { mv } from "shelljs";
 import decompress from "decompress";
 
 const URL =

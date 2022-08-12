@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
+    "target": "es2016",
     "module": "commonjs",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -11,8 +11,6 @@
     "noFallthroughCasesInSwitch": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-    "declaration": true,
-
   },
-  "files": ["src/index.ts", "src/resolver.ts"]
+  "files": ["src/index.ts", "src/resolver.ts", "scripts/fetch-maxmind-db.ts"]
 }
