@@ -4,7 +4,7 @@
   "description": "bot for discord",
   "main": "Bot.ts",
   "scripts": {
-    "start": "nodemon src/Bot.ts --resolveJsonModule"
+    "start": "nodemon src/Bot.ts"
   },
   "author": "",
   "license": "ISC",
