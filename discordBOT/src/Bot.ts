@@ -3,13 +3,18 @@ import interactionCreate from "../scripts/interactions/interactionCreate";
 import ready from "../scripts/interactions/ready";
 import "dotenv/config";
 
-console.log("Bot is starting...");
 
-const client = new Client ({
-  intents: []
-});
+function main(){
+  console.log("Bot is starting...");
 
-ready(client);
-interactionCreate(client);
+  const client = new Client ({
+    intents: []
+  });
+  
+  ready(client);
+  interactionCreate(client);
+  
+  client.login(process.env.botToken);
+}
 
-client.login(process.env.botToken);
+main();
