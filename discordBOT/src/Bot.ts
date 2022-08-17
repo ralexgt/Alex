@@ -1,6 +1,6 @@
-import { Client, GatewayIntentBits, GuildMember, IntentsBitField } from "discord.js";
-import interactionCreate from "../scripts/interactions/interactionCreate";
-import ready from "../scripts/interactions/ready";
+import { Client, IntentsBitField } from "discord.js";
+import interactionCreate from "./interactions/interactionCreate";
+import ready from "./interactions/ready";
 import "dotenv/config";
 
 
@@ -14,7 +14,7 @@ function main(){
   ready(client);
   interactionCreate(client);
 
-  client.login(process.env.botToken);
+  client.login(process.env.BOT_TOKEN);
 }
 
 main();

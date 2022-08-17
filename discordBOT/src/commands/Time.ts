@@ -1,5 +1,5 @@
 import { CommandInteraction, Client } from "discord.js";
-import { Command } from "../../src/Command"
+import { Command } from "../Command"
 
 type Time = number | string;
 
