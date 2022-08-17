@@ -20,5 +20,6 @@ export const Time: Command = {
       ephemeral: true,
       content
     });
+    console.log("text sent");
   }
 }

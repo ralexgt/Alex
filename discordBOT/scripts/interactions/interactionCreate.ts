@@ -1,4 +1,4 @@
-import { CommandInteraction, Client, Interaction } from "discord.js";
+import { CommandInteraction, Client, Interaction, GuildMember } from "discord.js";
 import { Commands } from "../../src/Commands";
 
 const handleSlashCommand = (client: Client, interaction: CommandInteraction): void => {
@@ -15,6 +15,6 @@ export default (client: Client): void => {
       if (interaction.isCommand()) {
          handleSlashCommand(client, interaction);
       }
-  });
+      });
 };
 
