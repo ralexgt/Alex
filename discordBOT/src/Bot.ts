@@ -1,7 +1,7 @@
 import { Client } from "discord.js";
-import interactionCreate from "../scripts/listeners/interactionCreate";
-import ready from "../scripts/listeners/ready";
-const tokens = require("../tokens");
+import interactionCreate from "../scripts/interactions/interactionCreate";
+import ready from "../scripts/interactions/ready";
+import "dotenv/config";
 
 console.log("Bot is starting...");
 
@@ -12,4 +12,4 @@ const client = new Client ({
 ready(client);
 interactionCreate(client);
 
-client.login(tokens.botToken);
+client.login(process.env.botToken);
