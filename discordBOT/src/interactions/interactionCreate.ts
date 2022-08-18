@@ -1,5 +1,5 @@
 import { CommandInteraction, Client, Interaction, GuildMember } from "discord.js";
-import { Commands } from "../../src/Commands";
+import { Commands } from "../commands";
 
 const handleSlashCommand = (client: Client, interaction: CommandInteraction): void => {
   const slashCommand = Commands.find((c: { name: string; }) => c.name === interaction.commandName);
