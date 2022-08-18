@@ -5,6 +5,7 @@ import "dotenv/config";
 
 
 function main(){
+  console.log(process.env.BOT_INVITATION_URL);
   console.log("Bot is starting...");
 
   const client = new Client ({
